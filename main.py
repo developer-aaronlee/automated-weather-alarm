@@ -4,7 +4,7 @@ from twilio.rest import Client
 owm_endpoint = "https://api.openweathermap.org/data/2.5/onecall"
 api_key = "3710d9cfd0b6e6b895b9ebaca3a9be3e"
 account_sid = "AC5fa6c5a6eb0469ffa205f93d360898f4"
-auth_token = "533ee0c3d029a4b23806b2991338307f"
+auth_token = "75520705d8deb32b60567fdce92072e6"
 
 parameters = {
     "lat": 38.847118,
@@ -29,18 +29,16 @@ for x in hourly_data[:12]:
 
 client = Client(account_sid, auth_token)
 if will_rain:
-    message = client.messages \
-        .create(
+    message = client.messages.create(
         body="Bring an umbrella.",
-        from_="+14422410317",
+        from_="+18667022307",
         to="+16078787777"
     )
     print(message.status)
 else:
-    message = client.messages \
-        .create(
+    message = client.messages.create(
         body="It's not raining today.",
-        from_="+14422410317",
+        from_="+18667022307",
         to="+16078787777"
     )
     print(message.status)
